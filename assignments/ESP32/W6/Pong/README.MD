@@ -14,7 +14,7 @@ Install PlatformIO for your IDE [platformIO](https://platformio.org/) or the CLI
 
 ## Usage
 
-To use this program make sure the ESP32s3 is connected to your PC with the COM usb-c port.
+To use this program make sure the ESP32-S3 is connected to your PC with the COM usb-c port.
 
 Using PlatformIO you can build and upload this project using the GUI or if preffered using the PIO commandline tool
 
@@ -28,8 +28,4 @@ A breadboard view of the circuit
 ![breadboard schematic](assignments/ESP32/W6/Pong/images/fritz.png "Bread Board")
 
 A schematic of the circuit
-![schematic](assignments/ESP32/W6/Pong/schematics/schematic.png "Schematic")
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+![schematic](assignments/ESP32/W6/Pong/images/schematic.png "Schematic")
