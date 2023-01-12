@@ -1,33 +1,40 @@
+// De bedoeling van dit programma is om met een LED bar en een 7 segment display het spel pong te spelen.
+// @date 12/1/23
+// @author Lars Grit
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
 #include "driver/uart.h"
 #include "SevSeg.h"
+#define BUF_SIZE (1024)
 
+// Variables to define GPIO pins
 int LED[10] = {38, 37, 36, 35, 2, 45, 48, 47, 1, 21};
+int led_length = 10;
 int BUTTON_LEFT = 42;
 int BUTTON_RIGHT = 41;
-int led_length = 10;
 
 uint8_t numDigits = 4;
 uint8_t digitPins[] = {8, 3, 46, 9};
 uint8_t segmentPins[] = {4, 5, 6, 7, 15, 16, 17, 18};
 
-#define BUF_SIZE (1024)
-
+// Variables for the game logic_
 int count = 0;
 int hit_state = 0;
 int is_button_pressed = 0;
 
+// Variables for the points 
 int points_left = 0;
 int points_right = 0;
-
 int scoreboard = 0000;
+
+// Variables that define the ammount of points needed and the speed of the game in MS
 int rounds = 5;
 int led_delay_length = 50;
 
-void app_main() {
+void uart_config() {
+    // Uart configuration logic
     uart_config_t uart_config = {
         .baud_rate = 115200,
         .data_bits = UART_DATA_8_BITS,
@@ -39,7 +46,8 @@ void app_main() {
     uart_driver_install(UART_NUM_0, BUF_SIZE * 2, 0, 0, NULL, 0);
     uart_param_config(UART_NUM_0, &uart_config);
     uart_set_pin(UART_NUM_0, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
-
+}
+void app_main() {
     // Set GPIO Direction for buttons and leds
     gpio_set_direction(BUTTON_LEFT, GPIO_MODE_INPUT);
     gpio_set_direction(BUTTON_RIGHT, GPIO_MODE_INPUT);
