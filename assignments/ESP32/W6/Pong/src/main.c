@@ -47,6 +47,7 @@ void uart_config() {
     uart_param_config(UART_NUM_0, &uart_config);
     uart_set_pin(UART_NUM_0, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
 }
+
 void app_main() {
     // Set GPIO Direction for buttons and leds
     gpio_set_direction(BUTTON_LEFT, GPIO_MODE_INPUT);
