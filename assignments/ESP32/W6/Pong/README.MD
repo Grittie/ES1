@@ -29,3 +29,6 @@ A breadboard view of the circuit
 
 A schematic of the circuit
 ![schematic](assignments/ESP32/W6/Pong/images/schematic.png "Schematic")
+
+A physical image of the circuit
+![schematic](assignments/ESP32/W6/Pong/images/physical.jpg "physical image")
