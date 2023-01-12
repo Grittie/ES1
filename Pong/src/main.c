@@ -24,8 +24,8 @@ int points_left = 0;
 int points_right = 0;
 
 int scoreboard = 0000;
-
 int rounds = 5;
+int led_delay_length = 50;
 
 void app_main() {
     uart_config_t uart_config = {
@@ -57,9 +57,9 @@ void app_main() {
     {
         for (int i = 0; i < led_length; i++) {
             gpio_set_level(LED[i], 1);
-            vTaskDelay(50 / portTICK_PERIOD_MS);
+            vTaskDelay(led_delay_length / portTICK_PERIOD_MS);
             gpio_set_level(LED[i], 0 << i);
-            vTaskDelay(50 / portTICK_PERIOD_MS);
+            vTaskDelay(led_delay_length / portTICK_PERIOD_MS);
             
             count++;
 
@@ -67,7 +67,7 @@ void app_main() {
             {
                 is_button_pressed = 1;
 
-                vTaskDelay(50 / portTICK_PERIOD_MS);
+                vTaskDelay(led_delay_length / portTICK_PERIOD_MS);
 
                 if (count == 9)
                 {
@@ -114,16 +114,16 @@ void app_main() {
 
         for (int i = 0; i < led_length; i++) {
             gpio_set_level(LED[count], 1);
-            vTaskDelay(50 / portTICK_PERIOD_MS);
+            vTaskDelay(led_delay_length / portTICK_PERIOD_MS);
             gpio_set_level(LED[count], 0 << i);
-            vTaskDelay(50 / portTICK_PERIOD_MS);
+            vTaskDelay(led_delay_length / portTICK_PERIOD_MS);
 
             count--;    
 
             if (gpio_get_level(BUTTON_LEFT) == 1 && is_button_pressed == 0)
             {
                 is_button_pressed = 1;
-                vTaskDelay(50 / portTICK_PERIOD_MS);
+                vTaskDelay(led_delay_length / portTICK_PERIOD_MS);
 
                 if (count == 0)
                 {
