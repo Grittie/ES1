@@ -20,7 +20,7 @@ pio run
 ## Schematics
 
 A breadboard view of the circuit
-![breadboard schematic](/pong/images/breadboard.png "Bread Board")
+![breadboard schematic](/pong/schematics/breadboard.png "Bread Board")
 
 A schematic of the circuit
 ![schematic](/schematics/schematic.png "Schematic")
