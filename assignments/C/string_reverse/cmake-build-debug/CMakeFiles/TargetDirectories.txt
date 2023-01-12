@@ -1,0 +1,3 @@
+/Users/grittie/Workspace/University/em1-gritla/assignments/C/string_reverse/cmake-build-debug/CMakeFiles/string_reverse.dir
+/Users/grittie/Workspace/University/em1-gritla/assignments/C/string_reverse/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/grittie/Workspace/University/em1-gritla/assignments/C/string_reverse/cmake-build-debug/CMakeFiles/rebuild_cache.dir

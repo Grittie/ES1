@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "uart.h": "c",
+        "random": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
