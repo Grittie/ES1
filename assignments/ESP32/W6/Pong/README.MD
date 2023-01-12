@@ -25,10 +25,10 @@ pio run
 ## Schematics
 
 A breadboard view of the circuit
-![breadboard schematic](Pong/images/fritz.png "Bread Board")
+![breadboard schematic](assignments/ESP32/W6/Pong/images/fritz.png "Bread Board")
 
 A schematic of the circuit
-![schematic](/schematics/schematic.png "Schematic")
+![schematic](assignments/ESP32/W6/Pong/schematics/schematic.png "Schematic")
 
 ## License
 
